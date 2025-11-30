@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "hashicorp.terraform",
+    "redhat.ansible",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.black-formatter",
+    "redhat.vscode-yaml",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "ms-azuretools.vscode-docker",
+    "amazonwebservices.aws-toolkit-vscode",
+    "ms-vscode.makefile-tools",
+    "davidanson.vscode-markdownlint",
+    "yzhang.markdown-all-in-one",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    "gruntfuggly.todo-tree",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "timonwong.shellcheck",
+    "foxundermoon.shell-format"
+  ]
+}

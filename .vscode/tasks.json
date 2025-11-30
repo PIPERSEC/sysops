@@ -1,0 +1,119 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Terraform: Format",
+      "type": "shell",
+      "command": "terraform fmt -recursive",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Terraform: Validate",
+      "type": "shell",
+      "command": "terraform validate",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Terraform: Plan",
+      "type": "shell",
+      "command": "terraform plan",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Ansible: Lint",
+      "type": "shell",
+      "command": "ansible-lint ${file}",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Ansible: Syntax Check",
+      "type": "shell",
+      "command": "ansible-playbook ${file} --syntax-check",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Python: Format with Black",
+      "type": "shell",
+      "command": "${workspaceFolder}/bin/python -m black ${file}",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Python: Lint with Flake8",
+      "type": "shell",
+      "command": "${workspaceFolder}/bin/python -m flake8 ${file}",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Docker: Build",
+      "type": "shell",
+      "command": "docker build -t ${input:imageName}:${input:imageTag} .",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Kubernetes: Apply",
+      "type": "shell",
+      "command": "kubectl apply -f ${file}",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Kubernetes: Validate",
+      "type": "shell",
+      "command": "kubectl apply -f ${file} --dry-run=client",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "imageName",
+      "type": "promptString",
+      "description": "Docker image name",
+      "default": "myapp"
+    },
+    {
+      "id": "imageTag",
+      "type": "promptString",
+      "description": "Docker image tag",
+      "default": "latest"
+    }
+  ]
+}

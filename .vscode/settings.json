@@ -1,0 +1,93 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.DS_Store": true,
+    "**/.terraform": true,
+    "**/*.tfstate": true,
+    "**/*.tfstate.backup": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.terraform/**": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/.terraform": true,
+    "**/venv": true,
+    "**/env": true
+  },
+  "python.defaultInterpreterPath": "${workspaceFolder}/bin/python",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "100"
+  ],
+  "editor.formatOnSave": true,
+  "editor.rulers": [
+    100
+  ],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced"
+  },
+  "[terraform]": {
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "terraform.languageServer": {
+    "enabled": true,
+    "args": []
+  },
+  "ansible.python.interpreterPath": "${workspaceFolder}/bin/python",
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json": [
+      "playbooks/*.yml",
+      "playbooks/*.yaml",
+      "roles/*/tasks/*.yml",
+      "roles/*/tasks/*.yaml"
+    ],
+    "https://raw.githubusercontent.com/kubernetes/kubernetes/master/api/openapi-spec/swagger.json": [
+      "templates/kubernetes/*.yaml",
+      "projects/**/k8s/*.yaml"
+    ]
+  },
+  "yaml.customTags": [
+    "!vault"
+  ],
+  "git.ignoreLimitWarning": true,
+  "markdownlint.config": {
+    "MD013": {
+      "line_length": 120,
+      "code_blocks": false,
+      "tables": false
+    },
+    "MD033": false,
+    "MD041": false
+  }
+}

@@ -1,0 +1,53 @@
+---
+# Common server configuration tasks
+
+- name: Update package cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  when: ansible_os_family == "Debian"
+
+- name: Upgrade all packages
+  apt:
+    upgrade: dist
+    autoremove: yes
+    autoclean: yes
+  when: ansible_os_family == "Debian" and common_upgrade_packages
+
+- name: Install common packages
+  package:
+    name: "{{ common_packages }}"
+    state: present
+
+- name: Configure timezone
+  timezone:
+    name: "{{ common_timezone }}"
+
+- name: Configure NTP
+  include_tasks: ntp.yml
+  when: common_configure_ntp
+
+- name: Configure firewall
+  include_tasks: firewall.yml
+  when: common_configure_firewall
+
+- name: Configure SSH hardening
+  include_tasks: ssh.yml
+  when: common_harden_ssh
+
+- name: Create system users
+  user:
+    name: "{{ item.name }}"
+    groups: "{{ item.groups | default([]) }}"
+    shell: "{{ item.shell | default('/bin/bash') }}"
+    state: present
+  loop: "{{ common_users }}"
+  when: common_users is defined
+
+- name: Set up authorized keys
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.ssh_key }}"
+    state: present
+  loop: "{{ common_users }}"
+  when: common_users is defined and item.ssh_key is defined

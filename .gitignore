@@ -1,0 +1,123 @@
+# Python virtual environment
+bin/
+include/
+lib/
+lib64/
+pyvenv.cfg
+share/
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Terraform
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+*.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Ansible
+*.retry
+.vault_pass
+.vault_password
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Secrets and credentials
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets.yml
+secrets.yaml
+credentials.json
+.aws/credentials
+.azure/credentials
+
+# IDE and editor files
+.vscode/settings.json.user
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.out
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# SSH keys
+id_rsa
+id_rsa.pub
+*.ppk
+
+# Cloud provider specific
+.aws/
+.azure/
+.gcp/
+
+# Docker
+.dockerignore.user
+
+# OS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Application specific
+node_modules/
+venv/
+env/
+ENV/
+.venv/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Cache
+.cache/
+*.cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover

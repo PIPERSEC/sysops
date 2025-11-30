@@ -1,0 +1,45 @@
+---
+# Default variables for common role
+
+common_packages:
+  - curl
+  - wget
+  - vim
+  - git
+  - htop
+  - net-tools
+  - unzip
+  - python3
+  - python3-pip
+
+common_timezone: "UTC"
+
+common_upgrade_packages: false
+
+common_configure_ntp: true
+
+common_configure_firewall: true
+
+common_harden_ssh: true
+
+# SSH hardening settings
+ssh_port: 22
+ssh_permit_root_login: "no"
+ssh_password_authentication: "no"
+ssh_pubkey_authentication: "yes"
+ssh_x11_forwarding: "no"
+
+# Firewall settings
+firewall_allowed_tcp_ports:
+  - 22
+  - 80
+  - 443
+
+firewall_allowed_udp_ports: []
+
+# Define users in your inventory or playbook
+# common_users:
+#   - name: devops
+#     groups: [sudo, docker]
+#     shell: /bin/bash
+#     ssh_key: "ssh-rsa AAAA..."
